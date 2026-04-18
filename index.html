@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - ScopeProof</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #1f2937;
+      background: #ffffff;
+    }
+    h1, h2 {
+      color: #1E3A5F;
+    }
+    .container {
+      background: #f9fafb;
+      padding: 32px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+    }
+    a {
+      color: #2F80ED;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .effective-date {
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="app-header">
+      <img src="ScopeProofAppIcon.png" alt="ScopeProof App Icon" class="app-icon" />
+      <h1>Privacy Policy for ScopeProof</h1>
+    </div>
+
+    <p class="effective-date"><strong>Last updated:</strong> April 2026</p>
+
+    <p>
+      ScopeProof ("the App") is designed to respect your privacy and operate transparently.
+      This Privacy Policy explains what information the App handles, where it is stored, and how it is used.
+    </p>
+
+    <h2>1. No Account Required</h2>
+    <p>
+      ScopeProof does not require you to create an account or sign in. You can use the App fully without
+      providing any personal information about yourself. (See Section&nbsp;4 for a limited exception when
+      using the optional remote-signing feature.)
+    </p>
+
+    <h2>2. Data Stored on Your Device</h2>
+    <p>
+      All data you create in ScopeProof is stored locally on your device, including:
+    </p>
+    <ul>
+      <li>Change orders, line items, and totals</li>
+      <li><strong>Customer contact details you enter (name, email address, phone number)</strong></li>
+      <li>Photos you attach as job evidence</li>
+      <li>Customer signatures (captured in person or returned from remote signing)</li>
+      <li>Company information, logo, brand color, and contractor signature</li>
+      <li>Line item templates, projects, and change order history</li>
+      <li>GPS coordinates and timestamps recorded at the time of signing (if Location is enabled)</li>
+    </ul>
+    <p>
+      By default, <strong>none of this data is transmitted to any server</strong> &mdash; including the customer
+      contact details listed above. Customer name, email, and phone are only transmitted off-device, and only
+      in encrypted form, when you explicitly initiate remote signing (see Section&nbsp;4).
+    </p>
+
+    <h2>3. No Tracking or Analytics</h2>
+    <p>
+      ScopeProof does not use analytics tools, tracking SDKs, advertising frameworks, or
+      behavioral-data collectors. We do not collect usage analytics, device identifiers for tracking,
+      or behavioral data.
+    </p>
+
+    <h2>4. Remote Signing (Pro Feature, Optional)</h2>
+    <p>
+      Remote signing is an optional Pro feature that lets your customer sign a change order from their own
+      device by opening a secure web link. It is strictly opt-in &mdash; if you never use it, no change-order
+      data, customer information, or metadata leaves your device beyond standard App Store purchase validation.
+    </p>
+    <p>
+      When you initiate remote signing, ScopeProof uses Google Firebase to deliver the change order to your
+      customer's web browser and to receive the signed document back. Specifically, the App uses the following
+      Firebase services:
+    </p>
+    <ul>
+      <li><strong>Firebase Authentication (anonymous sign-in):</strong> The App signs in anonymously so that Firebase security rules can gate read/write access. No email, name, account, or personal identifier about you is sent to Firebase for authentication &mdash; Firebase issues a random, ephemeral anonymous user ID.</li>
+      <li><strong>Cloud Firestore:</strong> Stores one document per signing request, containing the encrypted change-order payload, a hash of the update secret, status (sent / viewed / signed / expired / rejected), creation and expiry timestamps, and your device's push notification token. Firestore sees only ciphertext &mdash; it never has access to the decryption key.</li>
+      <li><strong>Cloud Functions:</strong> A single server-side function validates an update secret and writes the customer's signature back to the Firestore document once they sign; a second function can extend the 7-day expiry. Cloud Functions do not have access to the decryption key and cannot read the plaintext change order.</li>
+      <li><strong>Firebase Cloud Messaging (FCM):</strong> Delivers push notifications to your device when the customer views, signs, rejects, or lets the request expire. Your device's FCM token is stored inside the signing-request document so only the relevant notifications are routed to you.</li>
+    </ul>
+    <p>
+      What is transmitted and how it is protected:
+    </p>
+    <ul>
+      <li>The change-order payload &mdash; <strong>including customer name, email, phone number, line items, totals, attached photos, your GPS coordinates at creation (if enabled), and company info</strong> &mdash; is encrypted on your device with <strong>AES-256-GCM</strong> using a freshly generated key before upload. Only the ciphertext is stored in Firestore.</li>
+      <li>The AES decryption key and an update-secret authorization token are <strong>never uploaded to Firebase</strong>. They live only in the URL fragment (<code>#key=...&auth=...</code>) of the signing link that you deliver to the customer. Web browsers do not transmit URL fragments to servers, so the key stays between you and the customer.</li>
+      <li>The customer's returned signature (PNG image, drawn name, timestamp, and optional device/IP metadata collected by the web page) is written back by the Cloud Function, downloaded to your device, and stored locally as a signed, immutable record.</li>
+    </ul>
+    <p>
+      <strong>Data retention.</strong> Signing requests automatically expire <strong>7 days</strong> after creation.
+      Once expired, the encrypted payload is no longer retrievable through the signing link, and the record is
+      marked for cleanup. You can also contact us (see Section&nbsp;17) at any time to request earlier deletion of
+      a specific signing document before its expiry. Once your device has downloaded the returned signature, the
+      signed change order is preserved locally on your device regardless of the remote document's status.
+    </p>
+    <p>
+      Firebase is a Google service. Google's handling of technical metadata such as IP addresses and server
+      request logs is governed by
+      <a href="https://firebase.google.com/support/privacy">Google's Firebase privacy practices</a>.
+    </p>
+
+    <h2>5. Push Notifications</h2>
+    <p>
+      ScopeProof requests permission to send push notifications only when you first use remote signing.
+      Notifications are used exclusively to alert you when a customer views, signs, or lets a signing request
+      expire. You can revoke notification permission at any time in your device settings.
+    </p>
+
+    <h2>6. Location Data</h2>
+    <p>
+      If enabled, ScopeProof may access your device location to:
+    </p>
+    <ul>
+      <li>Auto-fill a job name from the street address of the job site</li>
+      <li>Tag change orders with GPS coordinates for job-site verification</li>
+      <li>Attach GPS metadata to photos you capture as evidence</li>
+    </ul>
+    <p>
+      Location data is used only on your device (and, if you use remote signing, it is included inside the
+      encrypted payload described in Section&nbsp;4). You can disable location access at any time in your
+      device settings.
+    </p>
+
+    <h2>7. Photos and Camera Access</h2>
+    <p>
+      ScopeProof requests access to your camera and photo library to attach evidence photos to change orders,
+      upload a company logo, and save generated PDFs. All images remain on your device unless you choose to
+      share them (via email, Messages, AirDrop, remote signing, etc.).
+    </p>
+
+    <h2>8. Cryptographic Proof Features (Dispute-Proof, Pro)</h2>
+    <p>
+      Dispute-Proof mode is an optional Pro feature that protects the integrity of signed change orders:
+    </p>
+    <ul>
+      <li>Line items, attached photo bytes, the customer signature, GPS, and timestamp are hashed using <strong>SHA-256</strong> at the moment of signing.</li>
+      <li>An <strong>HMAC-SHA256</strong> signature is generated using a device-local key stored securely in the iOS Keychain.</li>
+      <li>All verification data is stored locally on your device. The HMAC key never leaves your device and is never transmitted to any external service.</li>
+    </ul>
+    <p>
+      If the App is deleted, the HMAC key in the Keychain is removed and previously sealed orders can no
+      longer be re-verified on that device (though the hashes themselves remain publicly verifiable via
+      exported evidence packages).
+    </p>
+
+    <h2>9. In-App Purchases</h2>
+    <p>
+      ScopeProof offers a single one-time purchase to unlock Pro features. Payments are processed securely by
+      Apple via the App Store. ScopeProof does not have access to your payment information.
+    </p>
+
+    <h2>10. Data Sharing</h2>
+    <p>
+      ScopeProof does not sell, share, or transmit your data to third parties for advertising or analytics.
+      Data is only shared when you explicitly choose to export or send files (PDF, CSV, QuickBooks, JSON,
+      evidence ZIP) via email, Messages, AirDrop, or other apps &mdash; or when you initiate remote signing,
+      as described in Section&nbsp;4.
+    </p>
+
+    <h2>11. Data Deletion</h2>
+    <p>
+      You can delete your data at any time by:
+    </p>
+    <ul>
+      <li>Deleting individual change orders or projects within the App</li>
+      <li>Removing the App from your device (this clears all locally stored data, including cryptographic keys in the Keychain)</li>
+      <li>Letting remote signing requests expire after 7 days, or contacting us to request earlier deletion of a specific signing document</li>
+    </ul>
+
+    <h2>12. Legal Basis for Processing (GDPR)</h2>
+    <p>
+      To the extent any data processing occurs, our legal bases are:
+    </p>
+    <ul>
+      <li><strong>Consent:</strong> You grant device permissions (camera, location, photo library, push notifications) voluntarily and can revoke them at any time in your device settings. Remote signing is triggered only by your explicit action.</li>
+      <li><strong>Legitimate interest:</strong> Providing core App functionality such as local data storage, cryptographic verification, PDF generation, and delivering remote-signing documents you choose to send.</li>
+      <li><strong>Contract:</strong> Processing the one-time Pro purchase via Apple's App Store.</li>
+    </ul>
+
+    <h2>13. Your Rights (EU/EEA Users)</h2>
+    <p>
+      Under the General Data Protection Regulation (GDPR), you have the right to access, rectify, erase,
+      restrict processing of, and request portability of your personal data.
+    </p>
+    <p>
+      Because ScopeProof stores all data locally by default, you exercise most of these rights directly:
+    </p>
+    <ul>
+      <li><strong>Access and portability:</strong> Use the App's export features (PDF, CSV, JSON, evidence ZIP) to retrieve your data at any time.</li>
+      <li><strong>Erasure:</strong> Delete individual change orders in the App, or delete the App entirely to remove all local data.</li>
+      <li><strong>Restriction and rectification:</strong> Edit drafts directly in the App. Signed change orders are intentionally immutable; create a revision or duplicate-as-draft to issue a correction.</li>
+      <li><strong>Remote signing records:</strong> Contact us at <a href="mailto:forthemcreation@gmail.com">forthemcreation@gmail.com</a> to request deletion of a specific encrypted signing document before its 7-day expiry.</li>
+    </ul>
+
+    <h2>14. Children's Privacy</h2>
+    <p>
+      ScopeProof is a professional tool for contractors and trade businesses. It is not directed toward
+      children under the age of 13 and does not knowingly collect personal information from children.
+    </p>
+
+    <h2>15. Changes to This Policy</h2>
+    <p>
+      This Privacy Policy may be updated from time to time to reflect changes in the App or legal requirements.
+      Any changes will be posted on this page with an updated date.
+    </p>
+
+    <h2>16. Governing Law</h2>
+    <p>
+      This Privacy Policy is governed by and construed in accordance with the laws of the Province of Quebec,
+      Canada, without regard to its conflict of law provisions.
+    </p>
+
+    <h2>17. Contact</h2>
+    <p>
+      ScopeProof is developed and maintained by ForThemCreation. If you have any questions about this Privacy
+      Policy, or wish to exercise any of the rights described above, you can contact us at:
+      <a href="mailto:forthemcreation@gmail.com">forthemcreation@gmail.com</a>.
+    </p>
+
+    <h2>18. Website Hosting</h2>
+    <p>
+      This privacy policy page is hosted on GitHub Pages. When you visit this page, GitHub may process
+      technical information such as IP address, browser details, and server request data as part of providing
+      web hosting infrastructure.
+    </p>
+  </div>
+</body>
+</html>
