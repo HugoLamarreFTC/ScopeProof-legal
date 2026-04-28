@@ -57,7 +57,7 @@
       <h1>Privacy Policy for ScopeProof</h1>
     </div>
 
-    <p class="effective-date"><strong>Last updated:</strong> April 2026</p>
+    <p class="effective-date"><strong>Last updated:</strong> April 27, 2026</p>
 
     <p>
       ScopeProof ("the App") is designed to respect your privacy and operate transparently.
@@ -86,8 +86,10 @@
     </ul>
     <p>
       By default, <strong>none of this data is transmitted to any server</strong> &mdash; including the customer
-      contact details listed above. Customer name, email, and phone are only transmitted off-device, and only
-      in encrypted form, when you explicitly initiate remote signing (see Section&nbsp;4).
+      contact details listed above. The customer's email address and phone number are only transmitted off-device,
+      and only in encrypted form, when you explicitly initiate remote signing (see Section&nbsp;4). The customer's
+      name is transmitted in plaintext as part of that same flow so that push notifications about the signing
+      request can identify which customer the notification refers to; it is not used for any other purpose.
     </p>
 
     <h2>3. No Tracking or Analytics</h2>
@@ -110,17 +112,19 @@
     </p>
     <ul>
       <li><strong>Firebase Authentication (anonymous sign-in):</strong> The App signs in anonymously so that Firebase security rules can gate read/write access. No email, name, account, or personal identifier about you is sent to Firebase for authentication &mdash; Firebase issues a random, ephemeral anonymous user ID.</li>
-      <li><strong>Cloud Firestore:</strong> Stores one document per signing request, containing the encrypted change-order payload, a hash of the update secret, status (sent / viewed / signed / expired / rejected), creation and expiry timestamps, and your device's push notification token. Firestore sees only ciphertext &mdash; it never has access to the decryption key.</li>
+      <li><strong>Cloud Firestore:</strong> Stores one document per signing request, containing the encrypted change-order payload, the customer's name in plaintext (used solely to personalize the push notification you receive when the customer interacts with the request), a hash of the update secret, status (sent / viewed / signed / expired / rejected), creation and expiry timestamps, and your device's push notification token. Apart from the customer name field, Firestore sees only ciphertext &mdash; it never has access to the decryption key.</li>
       <li><strong>Cloud Functions:</strong> A single server-side function validates an update secret and writes the customer's signature back to the Firestore document once they sign; a second function can extend the 7-day expiry. Cloud Functions do not have access to the decryption key and cannot read the plaintext change order.</li>
-      <li><strong>Firebase Cloud Messaging (FCM):</strong> Delivers push notifications to your device when the customer views, signs, rejects, or lets the request expire. Your device's FCM token is stored inside the signing-request document so only the relevant notifications are routed to you.</li>
+      <li><strong>Firebase Cloud Messaging (FCM):</strong> Delivers push notifications to your device when the customer views, signs, rejects, or lets the request expire. Your device's FCM token is stored inside the signing-request document only while the request is active (a maximum of 7 days, until the request expires or is signed) so that only the relevant notifications are routed to you.</li>
+      <li><strong>Firebase App Check (App Attest):</strong> The App uses App Check, backed by Apple's App Attest, to prevent abuse of our Cloud Functions. App Check generates an anonymous attestation token that proves the call is coming from a legitimate copy of ScopeProof on a real Apple device. The token contains no personal data about you and cannot be used to identify or track you across apps.</li>
     </ul>
     <p>
       What is transmitted and how it is protected:
     </p>
     <ul>
-      <li>The change-order payload &mdash; <strong>including customer name, email, phone number, line items, totals, attached photos, your GPS coordinates at creation (if enabled), and company info</strong> &mdash; is encrypted on your device with <strong>AES-256-GCM</strong> using a freshly generated key before upload. Only the ciphertext is stored in Firestore.</li>
+      <li>The change-order payload &mdash; <strong>including customer email, phone number, line items, totals, attached photos, your GPS coordinates at creation (if enabled), and company info</strong> &mdash; is encrypted on your device with <strong>AES-256-GCM</strong> using a freshly generated key before upload. Only the ciphertext is stored in Firestore.</li>
+      <li>The customer's <strong>name</strong> is the one field stored in plaintext alongside the encrypted payload, for the sole purpose of letting our push-notification Cloud Function include the customer's name in the alert you receive (e.g., &ldquo;Jane Doe signed your change order&rdquo;). It is not used for any other purpose and is not shared with third parties.</li>
       <li>The AES decryption key and an update-secret authorization token are <strong>never uploaded to Firebase</strong>. They live only in the URL fragment (<code>#key=...&auth=...</code>) of the signing link that you deliver to the customer. Web browsers do not transmit URL fragments to servers, so the key stays between you and the customer.</li>
-      <li>The customer's returned signature (PNG image, drawn name, timestamp, and optional device/IP metadata collected by the web page) is written back by the Cloud Function, downloaded to your device, and stored locally as a signed, immutable record.</li>
+      <li>When the customer signs on the web, the signing page records the customer's drawn signature (PNG image), typed name, signing timestamp, IP address, browser user-agent string, and consent acknowledgment. These are written back to the Firestore document by the Cloud Function as part of the dispute-proof signature record, then downloaded to your device and stored locally as a signed, immutable record.</li>
     </ul>
     <p>
       <strong>Data retention.</strong> Signing requests automatically expire <strong>7 days</strong> after creation.
@@ -170,8 +174,8 @@
     </p>
     <ul>
       <li>Line items, attached photo bytes, the customer signature, GPS, and timestamp are hashed using <strong>SHA-256</strong> at the moment of signing.</li>
-      <li>An <strong>HMAC-SHA256</strong> signature is generated using a device-local key stored securely in the iOS Keychain.</li>
-      <li>All verification data is stored locally on your device. The HMAC key never leaves your device and is never transmitted to any external service.</li>
+      <li>An <strong>HMAC-SHA256</strong> signature is generated using a device-local key stored in the iOS Keychain (which is hardware-backed by the Secure Enclave on supported devices).</li>
+      <li>All verification data is stored locally on your device. The HMAC key never leaves your device, is never backed up to iCloud, and is never transmitted to any external service.</li>
     </ul>
     <p>
       If the App is deleted, the HMAC key in the Keychain is removed and previously sealed orders can no
@@ -185,13 +189,15 @@
       Apple via the App Store. ScopeProof does not have access to your payment information.
     </p>
 
-    <h2>10. Data Sharing</h2>
+    <h2>10. Data Sharing and Sub-Processors</h2>
     <p>
       ScopeProof does not sell, share, or transmit your data to third parties for advertising or analytics.
-      Data is only shared when you explicitly choose to export or send files (PDF, CSV, QuickBooks, JSON,
-      evidence ZIP) via email, Messages, AirDrop, or other apps &mdash; or when you initiate remote signing,
-      as described in Section&nbsp;4.
+      Data leaves your device only when you take an explicit action:
     </p>
+    <ul>
+      <li>When you export or send files (PDF, CSV, QuickBooks, JSON, evidence ZIP) via email, Messages, AirDrop, or other apps you choose.</li>
+      <li>When you initiate remote signing. In that case <strong>Google Firebase</strong> (Google LLC) acts as our sole data sub-processor under GDPR Art.&nbsp;28, providing the storage, push delivery, and abuse-prevention services described in Section&nbsp;4. Apart from Firebase, ScopeProof has no third-party data processors.</li>
+    </ul>
 
     <h2>11. Data Deletion</h2>
     <p>
@@ -231,7 +237,7 @@
     <h2>14. Children's Privacy</h2>
     <p>
       ScopeProof is a professional tool for contractors and trade businesses. It is not directed toward
-      children under the age of 13 and does not knowingly collect personal information from children.
+      children, and we do not knowingly collect personal information from anyone under the age of 17.
     </p>
 
     <h2>15. Changes to This Policy</h2>
