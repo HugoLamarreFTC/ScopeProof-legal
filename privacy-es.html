@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de privacidad – ScopeProof</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #1f2937;
+      background: #ffffff;
+    }
+    h1, h2 {
+      color: #1E3A5F;
+    }
+    .container {
+      background: #f9fafb;
+      padding: 32px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+    }
+    a {
+      color: #2F80ED;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .effective-date {
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+    .lang-bar {
+      text-align: right;
+      margin-bottom: 16px;
+      font-size: 14px;
+      color: #6b7280;
+    }
+    .lang-bar strong {
+      color: #1E3A5F;
+    }
+    .translation-notice {
+      font-size: 13px;
+      color: #6b7280;
+      background: #eef2ff;
+      border-left: 3px solid #2F80ED;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="lang-bar">
+      <a href="index.html">English</a> ·
+      <a href="privacy-fr.html">Français</a> ·
+      <a href="privacy-de.html">Deutsch</a> ·
+      <strong>Español</strong>
+    </div>
+    <div class="app-header">
+      <img src="ScopeProofAppIcon.png" alt="Icono de la app ScopeProof" class="app-icon" />
+      <h1>Política de privacidad de ScopeProof</h1>
+    </div>
+
+    <p class="effective-date"><strong>Última actualización:</strong> 27 de abril de 2026</p>
+
+    <p class="translation-notice">
+      Esta es una traducción de cortesía. En caso de discrepancia, la <a href="index.html">versión en inglés</a> es la legalmente vinculante.
+    </p>
+
+    <p>
+      ScopeProof («la App») está diseñada para respetar tu privacidad y operar de forma transparente.
+      Esta política de privacidad explica qué información trata la App, dónde se almacena y cómo se utiliza.
+    </p>
+
+    <h2>1. No se requiere cuenta</h2>
+    <p>
+      ScopeProof no te exige crear una cuenta ni iniciar sesión. Puedes utilizar la App por completo sin proporcionar
+      información personal sobre ti. (Consulta la sección&nbsp;4 para una excepción limitada al usar la función opcional
+      de firma remota.)
+    </p>
+
+    <h2>2. Datos almacenados en tu dispositivo</h2>
+    <p>
+      Todos los datos que crees en ScopeProof se almacenan localmente en tu dispositivo, incluidos:
+    </p>
+    <ul>
+      <li>Órdenes de cambio, ítems y totales</li>
+      <li><strong>Datos de contacto del cliente que introduces (nombre, correo electrónico, número de teléfono)</strong></li>
+      <li>Fotos que adjuntes como evidencia del trabajo</li>
+      <li>Firmas del cliente (capturadas en persona o devueltas mediante firma remota)</li>
+      <li>Información de la empresa, logotipo, color de marca y firma del contratista</li>
+      <li>Plantillas de ítems, proyectos e historial de órdenes de cambio</li>
+      <li>Coordenadas GPS y marcas de tiempo registradas en el momento de la firma (si la ubicación está activada)</li>
+    </ul>
+    <p>
+      Por defecto, <strong>ninguno de estos datos se transmite a ningún servidor</strong> &mdash; incluidos los datos de
+      contacto del cliente listados arriba. La dirección de correo y el número de teléfono del cliente solo se transmiten
+      fuera del dispositivo, y únicamente en forma cifrada, cuando inicias explícitamente la firma remota (ver sección&nbsp;4).
+      El nombre del cliente se transmite en texto plano como parte de ese mismo flujo para que las notificaciones push
+      sobre la solicitud de firma puedan identificar a qué cliente se refiere la notificación; no se utiliza para ningún
+      otro fin.
+    </p>
+
+    <h2>3. Sin seguimiento ni analíticas</h2>
+    <p>
+      ScopeProof no utiliza herramientas de analítica, SDK de seguimiento, frameworks publicitarios ni recopiladores
+      de datos de comportamiento. No recopilamos estadísticas de uso, identificadores de dispositivo con fines de
+      seguimiento ni datos de comportamiento.
+    </p>
+
+    <h2>4. Firma remota (función Pro, opcional)</h2>
+    <p>
+      La firma remota es una función Pro opcional que permite a tu cliente firmar una orden de cambio desde su propio
+      dispositivo abriendo un enlace web seguro. Es estrictamente opcional &mdash; si no la usas, ningún dato de orden
+      de cambio, información del cliente ni metadato sale de tu dispositivo más allá de la validación estándar de
+      compra de la App Store.
+    </p>
+    <p>
+      Cuando inicias la firma remota, ScopeProof utiliza Google Firebase para entregar la orden de cambio al navegador
+      web de tu cliente y recibir el documento firmado de vuelta. En concreto, la App utiliza los siguientes servicios
+      de Firebase:
+    </p>
+    <ul>
+      <li><strong>Firebase Authentication (inicio de sesión anónimo):</strong> la App inicia sesión de forma anónima para que las reglas de seguridad de Firebase puedan controlar el acceso de lectura/escritura. No se envía a Firebase ningún correo, nombre, cuenta o identificador personal sobre ti para la autenticación &mdash; Firebase emite un identificador de usuario anónimo aleatorio y efímero.</li>
+      <li><strong>Cloud Firestore:</strong> almacena un documento por cada solicitud de firma, que contiene la carga útil cifrada de la orden de cambio, el nombre del cliente en texto plano (utilizado únicamente para personalizar la notificación push que recibes cuando el cliente interactúa con la solicitud), un hash del secreto de actualización, el estado (enviada / vista / firmada / expirada / rechazada), las marcas de tiempo de creación y expiración, y el token de notificaciones push de tu dispositivo. Salvo el campo del nombre del cliente, Firestore solo ve texto cifrado &mdash; nunca tiene acceso a la clave de descifrado.</li>
+      <li><strong>Cloud Functions:</strong> una función del lado del servidor valida un secreto de actualización y escribe la firma del cliente en el documento de Firestore una vez firmado; una segunda función puede ampliar la expiración de 7 días. Cloud Functions no tiene acceso a la clave de descifrado y no puede leer la orden de cambio en texto plano.</li>
+      <li><strong>Firebase Cloud Messaging (FCM):</strong> entrega notificaciones push a tu dispositivo cuando el cliente ve, firma, rechaza o deja expirar la solicitud. El token FCM de tu dispositivo se almacena dentro del documento de solicitud de firma solo mientras la solicitud esté activa (un máximo de 7 días, hasta que expire o se firme) para que solo lleguen las notificaciones relevantes.</li>
+      <li><strong>Firebase App Check (App Attest):</strong> la App utiliza App Check, basado en App Attest de Apple, para evitar abusos de nuestras Cloud Functions. App Check genera un token de atestación anónimo que prueba que la llamada proviene de una copia legítima de ScopeProof en un dispositivo Apple real. El token no contiene datos personales sobre ti y no puede usarse para identificarte ni rastrearte entre apps.</li>
+    </ul>
+    <p>
+      Qué se transmite y cómo está protegido:
+    </p>
+    <ul>
+      <li>La carga útil de la orden de cambio &mdash; <strong>incluyendo el correo y teléfono del cliente, los ítems, los totales, las fotos adjuntas, tus coordenadas GPS al crearla (si están activadas) y la información de la empresa</strong> &mdash; se cifra en tu dispositivo con <strong>AES-256-GCM</strong> usando una clave recién generada antes de subirse. Solo el texto cifrado se almacena en Firestore.</li>
+      <li>El <strong>nombre</strong> del cliente es el único campo que se almacena en texto plano junto a la carga útil cifrada, con el único fin de permitir que nuestra Cloud Function de notificaciones push incluya el nombre del cliente en la alerta que recibes (por ejemplo, «Jane Doe firmó tu orden de cambio»). No se usa para ningún otro fin ni se comparte con terceros.</li>
+      <li>La clave de descifrado AES y un token de autorización (secreto de actualización) <strong>nunca se suben a Firebase</strong>. Residen exclusivamente en el fragmento de la URL (<code>#key=...&auth=...</code>) del enlace de firma que envías al cliente. Los navegadores web no transmiten los fragmentos de URL al servidor, por lo que la clave permanece entre tú y el cliente.</li>
+      <li>Cuando el cliente firma en la web, la página de firma registra la firma dibujada del cliente (imagen PNG), el nombre escrito, la marca de tiempo de la firma, la dirección IP, la cadena user-agent del navegador y el reconocimiento de consentimiento. La Cloud Function los escribe de vuelta al documento de Firestore como parte del registro de firma a prueba de disputas, luego se descargan a tu dispositivo y se almacenan localmente como un registro firmado e inmutable.</li>
+    </ul>
+    <p>
+      <strong>Conservación de datos.</strong> Las solicitudes de firma expiran automáticamente <strong>7 días</strong>
+      después de su creación. Una vez expiradas, la carga útil cifrada deja de ser recuperable a través del enlace de firma
+      y el registro queda marcado para limpieza. También puedes contactarnos (ver sección&nbsp;17) en cualquier momento
+      para solicitar la eliminación anticipada de un documento de firma específico antes de su expiración. Una vez que tu
+      dispositivo haya descargado la firma devuelta, la orden de cambio firmada se conserva localmente en tu dispositivo
+      independientemente del estado del documento remoto.
+    </p>
+    <p>
+      Firebase es un servicio de Google. El tratamiento por parte de Google de metadatos técnicos como direcciones IP
+      y registros de solicitudes del servidor se rige por las
+      <a href="https://firebase.google.com/support/privacy">prácticas de privacidad de Firebase de Google</a>.
+    </p>
+
+    <h2>5. Notificaciones push</h2>
+    <p>
+      ScopeProof solicita permiso para enviar notificaciones push solo cuando usas la firma remota por primera vez.
+      Las notificaciones se utilizan exclusivamente para avisarte cuando un cliente ve, firma o deja expirar una
+      solicitud de firma. Puedes revocar el permiso en cualquier momento desde los ajustes de tu dispositivo.
+    </p>
+
+    <h2>6. Datos de ubicación</h2>
+    <p>
+      Si está activada, ScopeProof puede acceder a la ubicación de tu dispositivo para:
+    </p>
+    <ul>
+      <li>Autocompletar el nombre del trabajo a partir de la dirección de la obra</li>
+      <li>Etiquetar las órdenes de cambio con coordenadas GPS para verificación del lugar</li>
+      <li>Adjuntar metadatos GPS a las fotos que captures como evidencia</li>
+    </ul>
+    <p>
+      Los datos de ubicación se utilizan únicamente en tu dispositivo (y, si usas la firma remota, se incluyen dentro
+      de la carga útil cifrada descrita en la sección&nbsp;4). Puedes desactivar el acceso a la ubicación en cualquier
+      momento desde los ajustes de tu dispositivo.
+    </p>
+
+    <h2>7. Fotos y acceso a la cámara</h2>
+    <p>
+      ScopeProof solicita acceso a tu cámara y a tu fototeca para adjuntar fotos como evidencia a las órdenes de
+      cambio, subir el logotipo de la empresa y guardar los PDF generados. Todas las imágenes permanecen en tu
+      dispositivo a menos que decidas compartirlas (por correo, Mensajes, AirDrop, firma remota, etc.).
+    </p>
+
+    <h2>8. Funciones de prueba criptográfica (modo a prueba de disputas, Pro)</h2>
+    <p>
+      El modo a prueba de disputas es una función Pro opcional que protege la integridad de las órdenes de cambio firmadas:
+    </p>
+    <ul>
+      <li>Los ítems, los bytes de las fotos adjuntas, la firma del cliente, el GPS y la marca de tiempo se hashean con <strong>SHA-256</strong> en el momento de la firma.</li>
+      <li>Se genera una firma <strong>HMAC-SHA256</strong> usando una clave local del dispositivo almacenada en el llavero de iOS (respaldada por hardware mediante Secure Enclave en los dispositivos compatibles).</li>
+      <li>Todos los datos de verificación se almacenan localmente en tu dispositivo. La clave HMAC nunca sale del dispositivo, no se respalda en iCloud y no se transmite a ningún servicio externo.</li>
+    </ul>
+    <p>
+      Si se elimina la App, la clave HMAC del llavero se borra y las órdenes previamente selladas ya no podrán
+      reverificarse en ese dispositivo (los hashes en sí siguen siendo verificables públicamente mediante los
+      paquetes de evidencia exportados).
+    </p>
+
+    <h2>9. Compras dentro de la aplicación</h2>
+    <p>
+      ScopeProof ofrece una única compra puntual para desbloquear las funciones Pro. Los pagos los procesa Apple
+      de forma segura a través de la App Store. ScopeProof no tiene acceso a tu información de pago.
+    </p>
+
+    <h2>10. Compartición de datos y subprocesadores</h2>
+    <p>
+      ScopeProof no vende, comparte ni transmite tus datos a terceros con fines publicitarios o de analítica.
+      Los datos solo salen de tu dispositivo cuando realizas una acción explícita:
+    </p>
+    <ul>
+      <li>Cuando exportas o envías archivos (PDF, CSV, QuickBooks, JSON, ZIP de evidencia) por correo, Mensajes, AirDrop u otras apps que elijas.</li>
+      <li>Cuando inicias la firma remota. En ese caso, <strong>Google Firebase</strong> (Google LLC) actúa como nuestro único subprocesador conforme al art.&nbsp;28 del RGPD, prestando los servicios de almacenamiento, entrega de notificaciones push y prevención de abuso descritos en la sección&nbsp;4. Aparte de Firebase, ScopeProof no tiene otros encargados del tratamiento.</li>
+    </ul>
+
+    <h2>11. Eliminación de datos</h2>
+    <p>
+      Puedes eliminar tus datos en cualquier momento:
+    </p>
+    <ul>
+      <li>Borrando órdenes de cambio o proyectos individuales dentro de la App</li>
+      <li>Eliminando la App de tu dispositivo (esto borra todos los datos almacenados localmente, incluidas las claves criptográficas del llavero)</li>
+      <li>Dejando que las solicitudes de firma remota expiren tras 7 días, o contactándonos para solicitar la eliminación anticipada de un documento de firma específico</li>
+    </ul>
+
+    <h2>12. Base legal del tratamiento (RGPD)</h2>
+    <p>
+      En la medida en que se realice algún tratamiento de datos, nuestras bases legales son:
+    </p>
+    <ul>
+      <li><strong>Consentimiento:</strong> concedes voluntariamente los permisos del dispositivo (cámara, ubicación, fototeca, notificaciones push) y puedes revocarlos en cualquier momento desde los ajustes de tu dispositivo. La firma remota se activa solo por tu acción explícita.</li>
+      <li><strong>Interés legítimo:</strong> proporcionar la funcionalidad principal de la App, como almacenamiento local de datos, verificación criptográfica, generación de PDF y entrega de los documentos de firma remota que decidas enviar.</li>
+      <li><strong>Contrato:</strong> tramitación de la compra única Pro a través de la App Store de Apple.</li>
+    </ul>
+
+    <h2>13. Tus derechos (usuarios de la UE/EEE)</h2>
+    <p>
+      Conforme al Reglamento General de Protección de Datos (RGPD), tienes derecho a acceder, rectificar, suprimir,
+      restringir el tratamiento y solicitar la portabilidad de tus datos personales.
+    </p>
+    <p>
+      Como ScopeProof almacena por defecto todos los datos localmente, ejerces la mayoría de estos derechos directamente:
+    </p>
+    <ul>
+      <li><strong>Acceso y portabilidad:</strong> usa las funciones de exportación de la App (PDF, CSV, JSON, ZIP de evidencia) para recuperar tus datos en cualquier momento.</li>
+      <li><strong>Supresión:</strong> elimina órdenes de cambio individualmente en la App, o desinstala la App por completo para borrar todos los datos locales.</li>
+      <li><strong>Limitación y rectificación:</strong> edita los borradores directamente en la App. Las órdenes de cambio firmadas son intencionalmente inmutables; crea una revisión o duplica como borrador para emitir una corrección.</li>
+      <li><strong>Registros de firma remota:</strong> contáctanos en <a href="mailto:forthemcreation@gmail.com">forthemcreation@gmail.com</a> para solicitar la eliminación de un documento de firma cifrado específico antes de su expiración a los 7 días.</li>
+    </ul>
+
+    <h2>14. Privacidad de los menores</h2>
+    <p>
+      ScopeProof es una herramienta profesional para contratistas y empresas de oficios. No está dirigida a menores
+      y no recopilamos a sabiendas información personal de personas menores de 17 años.
+    </p>
+
+    <h2>15. Cambios en esta política</h2>
+    <p>
+      Esta política de privacidad puede actualizarse de vez en cuando para reflejar cambios en la App o requisitos
+      legales. Cualquier cambio se publicará en esta página con una fecha actualizada.
+    </p>
+
+    <h2>16. Ley aplicable</h2>
+    <p>
+      Esta política de privacidad se rige e interpreta conforme a las leyes de la Provincia de Quebec, Canadá,
+      sin tener en cuenta sus disposiciones sobre conflictos de leyes.
+    </p>
+
+    <h2>17. Contacto</h2>
+    <p>
+      ScopeProof es desarrollada y mantenida por ForThemCreation. Si tienes preguntas sobre esta política de privacidad,
+      o deseas ejercer alguno de los derechos descritos arriba, puedes contactarnos en:
+      <a href="mailto:forthemcreation@gmail.com">forthemcreation@gmail.com</a>.
+    </p>
+
+    <h2>18. Alojamiento del sitio web</h2>
+    <p>
+      Esta página de política de privacidad está alojada en GitHub Pages. Cuando visitas esta página, GitHub puede
+      tratar información técnica como dirección IP, detalles del navegador y datos de solicitud del servidor como
+      parte de la prestación de la infraestructura de alojamiento web.
+    </p>
+  </div>
+</body>
+</html>
