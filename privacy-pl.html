@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polityka prywatności – ScopeProof</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      color: #1f2937;
+      background: #ffffff;
+    }
+    h1, h2 {
+      color: #1E3A5F;
+    }
+    .container {
+      background: #f9fafb;
+      padding: 32px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+    }
+    a {
+      color: #2F80ED;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .effective-date {
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+    .lang-bar {
+      text-align: right;
+      margin-bottom: 16px;
+      font-size: 14px;
+      color: #6b7280;
+    }
+    .lang-bar strong {
+      color: #1E3A5F;
+    }
+    .translation-notice {
+      font-size: 13px;
+      color: #6b7280;
+      background: #eef2ff;
+      border-left: 3px solid #2F80ED;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="lang-bar">
+      <a href="index.html">English</a> ·
+      <a href="privacy-fr.html">Français</a> ·
+      <a href="privacy-es.html">Español</a> ·
+      <a href="privacy-de.html">Deutsch</a> ·
+      <a href="privacy-pt.html">Português</a> ·
+      <a href="privacy-ja.html">日本語</a> ·
+      <strong>Polski</strong> ·
+      <a href="privacy-ru.html">Русский</a> ·
+      <a href="privacy-id.html">Bahasa Indonesia</a> ·
+      <a href="privacy-th.html">ไทย</a>
+    </div>
+    <div class="app-header">
+      <img src="ScopeProofAppIcon.png" alt="Ikona aplikacji ScopeProof" class="app-icon" />
+      <h1>Polityka prywatności aplikacji ScopeProof</h1>
+    </div>
+
+    <p class="effective-date"><strong>Ostatnia aktualizacja:</strong> 7 czerwca 2026</p>
+
+    <p class="translation-notice">
+      To jest tłumaczenie udostępnione dla wygody użytkownika. W razie jakichkolwiek rozbieżności wiążąca prawnie jest <a href="index.html">wersja angielska</a>.
+    </p>
+
+    <p>
+      ScopeProof („Aplikacja") została zaprojektowana z poszanowaniem Twojej prywatności i działa w sposób
+      przejrzysty. Niniejsza Polityka prywatności wyjaśnia, jakie informacje Aplikacja przetwarza, gdzie są
+      one przechowywane oraz w jaki sposób są wykorzystywane.
+    </p>
+
+    <h2>1. Brak wymogu konta</h2>
+    <p>
+      ScopeProof nie wymaga zakładania konta ani logowania. Możesz w pełni korzystać z Aplikacji bez
+      podawania jakichkolwiek danych osobowych na swój temat. (Zob. sekcję&nbsp;4, w której opisano
+      ograniczony wyjątek dotyczący opcjonalnej funkcji podpisu zdalnego.)
+    </p>
+
+    <h2>2. Dane przechowywane na Twoim urządzeniu</h2>
+    <p>
+      Wszystkie dane, które tworzysz w ScopeProof, są przechowywane lokalnie na Twoim urządzeniu, w tym:
+    </p>
+    <ul>
+      <li>Zlecenia zmian, pozycje kosztorysowe i sumy</li>
+      <li><strong>Dane kontaktowe klienta, które wprowadzasz (imię i nazwisko, adres e-mail, numer telefonu)</strong></li>
+      <li>Zdjęcia dołączane jako dowody z placu budowy</li>
+      <li>Podpisy klienta (złożone osobiście lub zwrócone z podpisu zdalnego)</li>
+      <li>Informacje o firmie, logo, kolor marki oraz podpis wykonawcy</li>
+      <li>Szablony pozycji kosztorysowych, projekty oraz historia zleceń zmian</li>
+      <li>Współrzędne GPS i znaczniki czasu zapisane w chwili podpisania (jeśli lokalizacja jest włączona)</li>
+    </ul>
+    <p>
+      Domyślnie <strong>żadne z tych danych nie są przesyłane na jakikolwiek serwer</strong> &mdash; w tym
+      wymienione powyżej dane kontaktowe klienta. Adres e-mail i numer telefonu klienta są przesyłane poza
+      Twoje urządzenie, i to wyłącznie w postaci zaszyfrowanej, tylko wtedy, gdy świadomie zainicjujesz
+      podpis zdalny (zob. sekcję&nbsp;4). Imię i nazwisko klienta jest przesyłane w postaci jawnej w ramach
+      tego samego procesu, aby powiadomienia push dotyczące prośby o podpis mogły wskazać, którego klienta
+      dotyczy dane powiadomienie; nie jest ono wykorzystywane do żadnego innego celu.
+    </p>
+
+    <h2>3. Statystyki użytkowania i raportowanie awarii</h2>
+    <p>
+      Aby zrozumieć, jak korzysta się z ScopeProof, oraz aby wykrywać i naprawiać błędy, Aplikacja korzysta
+      z dwóch usług Google Firebase: <strong>Firebase Analytics</strong> (anonimowe statystyki użytkowania
+      funkcji) oraz <strong>Firebase Crashlytics</strong> (diagnostyka awarii i błędów).
+    </p>
+    <p>
+      <strong>Decyduje o tym Twoja zgoda.</strong> W UE, EOG, Wielkiej Brytanii i Szwajcarii statystyki
+      użytkowania i raportowanie awarii są <strong>domyślnie wyłączone</strong> i zostają włączone wyłącznie
+      wtedy, gdy wyrazisz na to zgodę przy pierwszym pytaniu. We wszystkich pozostałych regionach są one
+      domyślnie włączone. We wszystkich regionach możesz je włączyć lub wyłączyć w dowolnym momencie w
+      <strong>Ustawienia &rsaquo; Dane i prywatność &rsaquo; „Udostępniaj dane o użytkowaniu i awariach".</strong>
+      Gdy to ustawienie jest wyłączone, nic nie jest gromadzone.
+    </p>
+    <p>
+      <strong>Co jest gromadzone (wyłącznie po włączeniu):</strong>
+    </p>
+    <ul>
+      <li>Anonimowe zdarzenia dotyczące korzystania z aplikacji &mdash; na przykład z których funkcji i ekranów korzystasz i kiedy &mdash; bez powiązanych z nimi danych biznesowych.</li>
+      <li>Diagnostyka awarii i błędów &mdash; ślady stosu oraz model Twojego urządzenia, wersja systemu operacyjnego i wersja aplikacji w chwili wystąpienia problemu.</li>
+      <li>Podstawowe dane o wydajności i diagnostyce działania Aplikacji.</li>
+      <li><strong>Losowo wygenerowany identyfikator</strong>, utworzony na Twoim urządzeniu i przechowywany lokalnie, dołączany do tych zdarzeń i raportów o awariach, aby można je było grupować według anonimowej sesji. Jest to losowy UUID &mdash; nie Twoje imię i nazwisko, adres e-mail, Apple ID, numer telefonu ani identyfikator reklamowy &mdash; i jest on usuwany w momencie odinstalowania Aplikacji.</li>
+    </ul>
+    <p>
+      <strong>Co nigdy nie jest gromadzone:</strong> Twoje zlecenia zmian, pozycje kosztorysowe, sumy, dane
+      kontaktowe klienta, zdjęcia, podpisy, współrzędne GPS, informacje o firmie ani jakiekolwiek inne dane
+      biznesowe. Statystyki i raporty o awariach zawierają wyłącznie dane dotyczące interakcji z aplikacją
+      oraz dane diagnostyki technicznej.
+    </p>
+    <p>
+      <strong>Brak reklam i brak śledzenia między aplikacjami.</strong> ScopeProof nie korzysta z platform
+      reklamowych, nie uzyskuje dostępu do identyfikatora reklamowego Twojego urządzenia (IDFA) ani nie
+      śledzi Cię w innych aplikacjach czy witrynach internetowych. Dane te są przetwarzane przez Google w
+      ramach Firebase; zob.
+      <a href="https://firebase.google.com/support/privacy">praktyki Google dotyczące prywatności w Firebase</a>.
+    </p>
+
+    <h2>4. Podpis zdalny (funkcja Pro, opcjonalna)</h2>
+    <p>
+      Podpis zdalny to opcjonalna funkcja Pro, która umożliwia Twojemu klientowi podpisanie zlecenia zmiany
+      z jego własnego urządzenia poprzez otwarcie bezpiecznego linku internetowego. Funkcja ta jest
+      całkowicie dobrowolna &mdash; jeśli nigdy z niej nie skorzystasz, żadne dane zlecenia zmiany, informacje
+      o kliencie ani metadane nie opuszczą Twojego urządzenia poza standardową weryfikacją zakupu w App Store.
+    </p>
+    <p>
+      Gdy zainicjujesz podpis zdalny, ScopeProof korzysta z Google Firebase, aby dostarczyć zlecenie zmiany
+      do przeglądarki internetowej Twojego klienta i otrzymać z powrotem podpisany dokument. Konkretnie
+      Aplikacja korzysta z następujących usług Firebase:
+    </p>
+    <ul>
+      <li><strong>Firebase Authentication (logowanie anonimowe):</strong> Aplikacja loguje się anonimowo, aby reguły bezpieczeństwa Firebase mogły kontrolować dostęp do odczytu/zapisu. Do Firebase nie jest przesyłany żaden adres e-mail, imię i nazwisko, konto ani identyfikator osobowy dotyczący Ciebie na potrzeby uwierzytelniania &mdash; Firebase wydaje losowy, tymczasowy anonimowy identyfikator użytkownika.</li>
+      <li><strong>Cloud Firestore:</strong> Przechowuje jeden dokument na każdą prośbę o podpis, zawierający zaszyfrowaną treść zlecenia zmiany, imię i nazwisko klienta w postaci jawnej (wykorzystywane wyłącznie do spersonalizowania powiadomienia push, które otrzymujesz, gdy klient wchodzi w interakcję z prośbą), skrót sekretu aktualizacji, status (wysłane / wyświetlone / podpisane / wygasłe / odrzucone), znaczniki czasu utworzenia i wygaśnięcia oraz token powiadomień push Twojego urządzenia. Z wyjątkiem pola z imieniem i nazwiskiem klienta Firestore widzi wyłącznie szyfrogram &mdash; nigdy nie ma dostępu do klucza deszyfrującego.</li>
+      <li><strong>Cloud Functions:</strong> Pojedyncza funkcja po stronie serwera weryfikuje sekret aktualizacji i zapisuje podpis klienta z powrotem do dokumentu Firestore po jego złożeniu; druga funkcja może przedłużyć 7-dniowy okres ważności. Cloud Functions nie mają dostępu do klucza deszyfrującego i nie mogą odczytać treści zlecenia zmiany w postaci jawnej.</li>
+      <li><strong>Firebase Cloud Messaging (FCM):</strong> Dostarcza powiadomienia push na Twoje urządzenie, gdy klient wyświetli, podpisze, odrzuci prośbę lub pozwoli jej wygasnąć. Token FCM Twojego urządzenia jest przechowywany wewnątrz dokumentu prośby o podpis wyłącznie przez czas, gdy prośba jest aktywna (maksymalnie 7 dni, do wygaśnięcia lub podpisania prośby), tak aby kierowane były do Ciebie wyłącznie istotne powiadomienia.</li>
+      <li><strong>Firebase App Check (App Attest):</strong> Aplikacja korzysta z App Check opartego na technologii App Attest firmy Apple, aby zapobiegać nadużyciom naszych Cloud Functions. App Check generuje anonimowy token poświadczenia, który potwierdza, że wywołanie pochodzi z legalnej kopii ScopeProof na prawdziwym urządzeniu Apple. Token nie zawiera żadnych danych osobowych na Twój temat i nie może zostać użyty do identyfikowania ani śledzenia Cię między aplikacjami.</li>
+    </ul>
+    <p>
+      Co jest przesyłane i w jaki sposób jest chronione:
+    </p>
+    <ul>
+      <li>Treść zlecenia zmiany &mdash; <strong>w tym adres e-mail klienta, numer telefonu, pozycje kosztorysowe, sumy, dołączone zdjęcia, Twoje współrzędne GPS w chwili utworzenia (jeśli włączone) oraz informacje o firmie</strong> &mdash; jest szyfrowana na Twoim urządzeniu za pomocą <strong>AES-256-GCM</strong> przy użyciu świeżo wygenerowanego klucza, jeszcze przed przesłaniem. W Firestore przechowywany jest wyłącznie szyfrogram.</li>
+      <li><strong>Imię i nazwisko</strong> klienta to jedyne pole przechowywane w postaci jawnej obok zaszyfrowanej treści, wyłącznie w celu umożliwienia naszej Cloud Function powiadomień push uwzględnienia imienia i nazwiska klienta w alercie, który otrzymujesz (np. „Jane Doe podpisała Twoje zlecenie zmiany"). Nie jest ono wykorzystywane do żadnego innego celu ani udostępniane stronom trzecim.</li>
+      <li>Klucz deszyfrujący AES oraz token autoryzacyjny (sekret aktualizacji) <strong>nigdy nie są przesyłane do Firebase</strong>. Znajdują się one wyłącznie we fragmencie adresu URL (<code>#key=...&auth=...</code>) linku do podpisu, który przekazujesz klientowi. Przeglądarki internetowe nie przesyłają fragmentów adresów URL do serwerów, dzięki czemu klucz pozostaje wyłącznie między Tobą a klientem.</li>
+      <li>Gdy klient składa podpis w internecie, strona podpisu rejestruje narysowany podpis klienta (obraz PNG), wpisane imię i nazwisko, znacznik czasu podpisania, adres IP, ciąg user-agent przeglądarki oraz potwierdzenie zgody. Elementy te są zapisywane z powrotem do dokumentu Firestore przez Cloud Function jako część odpornego na spory zapisu podpisu, a następnie pobierane na Twoje urządzenie i przechowywane lokalnie jako podpisany, niezmienny rekord.</li>
+    </ul>
+    <p>
+      <strong>Przechowywanie danych.</strong> Prośby o podpis automatycznie wygasają <strong>7 dni</strong> po
+      ich utworzeniu. Po wygaśnięciu zaszyfrowana treść nie jest już dostępna za pośrednictwem linku do podpisu,
+      a rekord zostaje oznaczony do usunięcia. Możesz również skontaktować się z nami (zob. sekcję&nbsp;17) w
+      dowolnym momencie, aby zażądać wcześniejszego usunięcia konkretnego dokumentu podpisu przed jego
+      wygaśnięciem. Po pobraniu zwróconego podpisu na Twoje urządzenie podpisane zlecenie zmiany jest
+      przechowywane lokalnie na Twoim urządzeniu niezależnie od statusu zdalnego dokumentu.
+    </p>
+    <p>
+      Firebase jest usługą Google. Sposób przetwarzania przez Google metadanych technicznych, takich jak adresy
+      IP i dzienniki żądań serwera, podlega
+      <a href="https://firebase.google.com/support/privacy">praktykom Google dotyczącym prywatności w Firebase</a>.
+    </p>
+
+    <h2>5. Powiadomienia push</h2>
+    <p>
+      ScopeProof prosi o pozwolenie na wysyłanie powiadomień push wyłącznie przy pierwszym skorzystaniu z
+      podpisu zdalnego. Powiadomienia służą wyłącznie do informowania Cię, gdy klient wyświetli, podpisze lub
+      pozwoli wygasnąć prośbie o podpis. Pozwolenie na powiadomienia możesz cofnąć w dowolnym momencie w
+      ustawieniach swojego urządzenia.
+    </p>
+
+    <h2>6. Dane o lokalizacji</h2>
+    <p>
+      Jeśli funkcja jest włączona, ScopeProof może uzyskiwać dostęp do lokalizacji Twojego urządzenia, aby:
+    </p>
+    <ul>
+      <li>Automatycznie uzupełnić nazwę zlecenia na podstawie adresu placu budowy</li>
+      <li>Oznaczać zlecenia zmian współrzędnymi GPS na potrzeby weryfikacji placu budowy</li>
+      <li>Dołączać metadane GPS do zdjęć, które wykonujesz jako dowody</li>
+    </ul>
+    <p>
+      Dane o lokalizacji są wykorzystywane wyłącznie na Twoim urządzeniu (a jeśli korzystasz z podpisu zdalnego,
+      są uwzględniane w zaszyfrowanej treści opisanej w sekcji&nbsp;4). Dostęp do lokalizacji możesz wyłączyć w
+      dowolnym momencie w ustawieniach swojego urządzenia.
+    </p>
+
+    <h2>7. Zdjęcia i dostęp do aparatu</h2>
+    <p>
+      ScopeProof prosi o dostęp do aparatu i biblioteki zdjęć, aby dołączać zdjęcia jako dowody do zleceń zmian,
+      przesyłać logo firmy oraz zapisywać wygenerowane pliki PDF. Wszystkie obrazy pozostają na Twoim urządzeniu,
+      chyba że zdecydujesz się je udostępnić (przez e-mail, Wiadomości, AirDrop, podpis zdalny itp.).
+    </p>
+
+    <h2>8. Funkcje dowodu kryptograficznego (tryb odporny na spory, Pro)</h2>
+    <p>
+      Tryb odporny na spory to opcjonalna funkcja Pro, która chroni integralność podpisanych zleceń zmian:
+    </p>
+    <ul>
+      <li>Pozycje kosztorysowe, bajty dołączonych zdjęć, podpis klienta, dane GPS oraz znacznik czasu są haszowane za pomocą <strong>SHA-256</strong> w chwili podpisania.</li>
+      <li>Podpis <strong>HMAC-SHA256</strong> jest generowany przy użyciu lokalnego klucza urządzenia przechowywanego w pęku kluczy iOS (który na obsługiwanych urządzeniach jest sprzętowo chroniony przez Secure Enclave).</li>
+      <li>Wszystkie dane weryfikacyjne są przechowywane lokalnie na Twoim urządzeniu. Klucz HMAC nigdy nie opuszcza Twojego urządzenia, nigdy nie jest kopiowany do iCloud i nigdy nie jest przesyłany do żadnej usługi zewnętrznej.</li>
+    </ul>
+    <p>
+      Jeśli Aplikacja zostanie usunięta, klucz HMAC w pęku kluczy zostaje usunięty, a wcześniej zaplombowane
+      zlecenia nie mogą już być ponownie zweryfikowane na tym urządzeniu (same skróty pozostają jednak publicznie
+      weryfikowalne za pośrednictwem wyeksportowanych pakietów dowodowych).
+    </p>
+
+    <h2>9. Zakupy w aplikacji</h2>
+    <p>
+      ScopeProof oferuje jednorazowy zakup odblokowujący funkcje Pro. Płatności są bezpiecznie przetwarzane przez
+      Apple za pośrednictwem App Store. ScopeProof nie ma dostępu do Twoich danych płatniczych.
+    </p>
+
+    <h2>10. Udostępnianie danych i podmioty przetwarzające</h2>
+    <p>
+      ScopeProof nie sprzedaje ani nie wynajmuje Twoich danych i nigdy nie wykorzystuje ich do celów reklamowych.
+      Jedyną stroną trzecią, która kiedykolwiek przetwarza dane w naszym imieniu, jest
+      <strong>Google Firebase</strong> (Google LLC), nasz jedyny podmiot podprzetwarzający (subprocesor) w
+      rozumieniu art.&nbsp;28 RODO. Dane opuszczają Twoje urządzenie wyłącznie w następujących przypadkach:
+    </p>
+    <ul>
+      <li>Gdy eksportujesz lub wysyłasz pliki (PDF, CSV, QuickBooks, JSON, ZIP z dowodami) przez e-mail, Wiadomości, AirDrop lub inne wybrane przez Ciebie aplikacje.</li>
+      <li>Gdy statystyki użytkowania i raportowanie awarii są włączone (zob. sekcję&nbsp;3), anonimowe zdarzenia dotyczące użytkowania oraz diagnostyka awarii są wysyłane do <strong>Google Firebase</strong>. Nigdy nie obejmuje to Twoich zleceń zmian, danych klienta, zdjęć ani podpisów.</li>
+      <li>Gdy inicjujesz podpis zdalny, <strong>Google Firebase</strong> zapewnia usługi przechowywania, dostarczania powiadomień push oraz zapobiegania nadużyciom opisane w sekcji&nbsp;4.</li>
+    </ul>
+
+    <h2>11. Usuwanie danych</h2>
+    <p>
+      Możesz usunąć swoje dane w dowolnym momencie poprzez:
+    </p>
+    <ul>
+      <li>Usuwanie poszczególnych zleceń zmian lub projektów w Aplikacji</li>
+      <li>Usunięcie Aplikacji z urządzenia (czyści to wszystkie dane przechowywane lokalnie, w tym klucze kryptograficzne w pęku kluczy oraz lokalny identyfikator analityczny)</li>
+      <li>Pozwolenie, aby prośby o podpis zdalny wygasły po 7 dniach, lub skontaktowanie się z nami w celu zażądania wcześniejszego usunięcia konkretnego dokumentu podpisu</li>
+    </ul>
+
+    <h2>12. Podstawa prawna przetwarzania (RODO)</h2>
+    <p>
+      W zakresie, w jakim dochodzi do jakiegokolwiek przetwarzania danych, nasze podstawy prawne są następujące:
+    </p>
+    <ul>
+      <li><strong>Zgoda:</strong> Tam, gdzie jest to wymagane (UE/EOG, Wielka Brytania i Szwajcaria), statystyki użytkowania i raportowanie awarii są przetwarzane wyłącznie po wyrażeniu przez Ciebie zgody, którą możesz w dowolnym momencie wycofać w Ustawieniach. Dobrowolnie udzielasz również uprawnień urządzenia (aparat, lokalizacja, biblioteka zdjęć, powiadomienia push) i możesz je w dowolnym momencie cofnąć w ustawieniach swojego urządzenia. Podpis zdalny jest uruchamiany wyłącznie w wyniku Twojego wyraźnego działania.</li>
+      <li><strong>Prawnie uzasadniony interes:</strong> Zapewnianie podstawowych funkcji Aplikacji, takich jak lokalne przechowywanie danych, weryfikacja kryptograficzna, generowanie plików PDF, dostarczanie dokumentów podpisu zdalnego, które zdecydujesz się wysłać, oraz &mdash; poza wymienionymi wyżej regionami wymagającymi zgody &mdash; ulepszanie Aplikacji za pomocą anonimowych statystyk i diagnostyki awarii, które możesz w dowolnym momencie wyłączyć.</li>
+      <li><strong>Umowa:</strong> Przetwarzanie jednorazowego zakupu Pro za pośrednictwem App Store firmy Apple.</li>
+    </ul>
+
+    <h2>13. Twoje prawa (użytkownicy z UE/EOG)</h2>
+    <p>
+      Na mocy Ogólnego rozporządzenia o ochronie danych (RODO) przysługuje Ci prawo dostępu do Twoich danych
+      osobowych, ich sprostowania, usunięcia, ograniczenia przetwarzania oraz żądania ich przenoszenia.
+    </p>
+    <p>
+      Ponieważ ScopeProof domyślnie przechowuje wszystkie dane lokalnie, większość tych praw realizujesz
+      bezpośrednio:
+    </p>
+    <ul>
+      <li><strong>Dostęp i przenoszenie:</strong> Skorzystaj z funkcji eksportu w Aplikacji (PDF, CSV, JSON, ZIP z dowodami), aby w dowolnym momencie pobrać swoje dane.</li>
+      <li><strong>Usunięcie:</strong> Usuń poszczególne zlecenia zmian w Aplikacji lub usuń całą Aplikację, aby skasować wszystkie dane lokalne.</li>
+      <li><strong>Ograniczenie i sprostowanie:</strong> Edytuj wersje robocze bezpośrednio w Aplikacji. Podpisane zlecenia zmian są celowo niezmienne; utwórz korektę (rewizję) lub zduplikuj jako wersję roboczą, aby wprowadzić poprawkę.</li>
+      <li><strong>Dokumenty podpisu zdalnego:</strong> Skontaktuj się z nami pod adresem <a href="mailto:forthemcreation@gmail.com">forthemcreation@gmail.com</a>, aby zażądać usunięcia konkretnego zaszyfrowanego dokumentu podpisu przed jego 7-dniowym wygaśnięciem.</li>
+    </ul>
+
+    <h2>14. Prywatność dzieci</h2>
+    <p>
+      ScopeProof to profesjonalne narzędzie dla wykonawców i firm budowlanych. Nie jest skierowane do dzieci i
+      nie gromadzimy świadomie danych osobowych od osób poniżej 17. roku życia.
+    </p>
+
+    <h2>15. Zmiany w niniejszej Polityce</h2>
+    <p>
+      Niniejsza Polityka prywatności może być od czasu do czasu aktualizowana, aby odzwierciedlać zmiany w
+      Aplikacji lub wymogi prawne. Wszelkie zmiany będą publikowane na tej stronie wraz ze zaktualizowaną datą.
+    </p>
+
+    <h2>16. Prawo właściwe</h2>
+    <p>
+      Niniejsza Polityka prywatności podlega prawu prowincji Quebec (Kanada) i jest interpretowana zgodnie z
+      tym prawem, z wyłączeniem jego przepisów dotyczących kolizji praw.
+    </p>
+
+    <h2>17. Kontakt</h2>
+    <p>
+      ScopeProof jest opracowywana i utrzymywana przez ForThemCreation. Jeśli masz jakiekolwiek pytania
+      dotyczące niniejszej Polityki prywatności lub chcesz skorzystać z któregokolwiek z opisanych powyżej
+      praw, możesz skontaktować się z nami pod adresem:
+      <a href="mailto:forthemcreation@gmail.com">forthemcreation@gmail.com</a>.
+    </p>
+
+    <h2>18. Hosting strony internetowej</h2>
+    <p>
+      Niniejsza strona z polityką prywatności jest hostowana w usłudze GitHub Pages. Podczas odwiedzania tej
+      strony GitHub może przetwarzać informacje techniczne, takie jak adres IP, dane przeglądarki oraz dane
+      żądań serwera, w ramach świadczenia infrastruktury hostingu internetowego.
+    </p>
+  </div>
+</body>
+</html>

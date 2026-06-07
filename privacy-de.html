@@ -73,8 +73,14 @@
     <div class="lang-bar">
       <a href="index.html">English</a> ·
       <a href="privacy-fr.html">Français</a> ·
+      <a href="privacy-es.html">Español</a> ·
       <strong>Deutsch</strong> ·
-      <a href="privacy-es.html">Español</a>
+      <a href="privacy-pt.html">Português</a> ·
+      <a href="privacy-ja.html">日本語</a> ·
+      <a href="privacy-pl.html">Polski</a> ·
+      <a href="privacy-ru.html">Русский</a> ·
+      <a href="privacy-id.html">Bahasa Indonesia</a> ·
+      <a href="privacy-th.html">ไทย</a>
     </div>
     <div class="app-header">
       <img src="ScopeProofAppIcon.png" alt="ScopeProof App-Symbol" class="app-icon" />
@@ -88,7 +94,7 @@
     </p>
 
     <p>
-      ScopeProof („die App") ist darauf ausgelegt, Ihre Privatsphäre zu respektieren und transparent zu arbeiten.
+      ScopeProof („die App“) ist darauf ausgelegt, Ihre Privatsphäre zu respektieren und transparent zu arbeiten.
       Diese Datenschutzerklärung beschreibt, welche Informationen die App verarbeitet, wo sie gespeichert werden
       und wie sie verwendet werden.
     </p>
@@ -133,7 +139,7 @@
       sind Nutzungsanalysen und Absturzberichte <strong>standardmäßig deaktiviert</strong> und werden nur aktiviert,
       wenn Sie bei der ersten Aufforderung zustimmen. Überall sonst sind sie standardmäßig aktiviert. In allen Regionen
       können Sie sie jederzeit unter
-      <strong>Einstellungen &rsaquo; Daten &amp; Datenschutz &rsaquo; „Nutzungs- und Absturzdaten teilen"</strong> ein- oder ausschalten.
+      <strong>Einstellungen &rsaquo; Daten &amp; Datenschutz &rsaquo; „Nutzungs- und Absturzdaten teilen“</strong> ein- oder ausschalten.
       Solange diese Einstellung deaktiviert ist, wird nichts erfasst.
     </p>
     <p>
@@ -165,7 +171,7 @@
     </p>
     <p>
       Wenn Sie die Fernunterzeichnung initiieren, verwendet ScopeProof Google Firebase, um den Nachtrag an den Webbrowser
-      Ihres Kunden zu liefern und das unterschriebene Dokument zurückzuempfangen. Konkret nutzt die App die folgenden
+      Ihres Kunden zu liefern und das unterschriebene Dokument zurückzuerhalten. Konkret nutzt die App die folgenden
       Firebase-Dienste:
     </p>
     <ul>
@@ -180,7 +186,7 @@
     </p>
     <ul>
       <li>Der Nachtrags-Payload &mdash; <strong>einschließlich Kunden-E-Mail, Telefonnummer, Posten, Summen, angehängten Fotos, Ihren GPS-Koordinaten bei der Erstellung (sofern aktiviert) und Firmeninformationen</strong> &mdash; wird auf Ihrem Gerät vor dem Hochladen mit <strong>AES-256-GCM</strong> mittels eines frisch erzeugten Schlüssels verschlüsselt. Nur der Chiffretext wird in Firestore gespeichert.</li>
-      <li>Der <strong>Name</strong> des Kunden ist das einzige Feld, das im Klartext neben dem verschlüsselten Payload gespeichert wird, ausschließlich damit unsere Push-Benachrichtigungs-Cloud-Function den Kundennamen in der Benachrichtigung mitführen kann (z.&nbsp;B. „Jane Doe hat Ihren Nachtrag unterzeichnet"). Er wird zu keinem anderen Zweck verwendet und nicht an Dritte weitergegeben.</li>
+      <li>Der <strong>Name</strong> des Kunden ist das einzige Feld, das im Klartext neben dem verschlüsselten Payload gespeichert wird, ausschließlich damit unsere Push-Benachrichtigungs-Cloud-Function den Kundennamen in der Benachrichtigung mitführen kann (z.&nbsp;B. „Jane Doe hat Ihren Nachtrag unterzeichnet“). Er wird zu keinem anderen Zweck verwendet und nicht an Dritte weitergegeben.</li>
       <li>Der AES-Entschlüsselungsschlüssel und ein Update-Geheimnis-Autorisierungstoken werden <strong>niemals an Firebase übertragen</strong>. Sie befinden sich ausschließlich im URL-Fragment (<code>#key=...&auth=...</code>) des Signatur-Links, den Sie an den Kunden übermitteln. Webbrowser übertragen URL-Fragmente nicht an Server, der Schlüssel bleibt also zwischen Ihnen und dem Kunden.</li>
       <li>Wenn der Kunde im Web unterschreibt, erfasst die Signaturseite die gezeichnete Unterschrift des Kunden (PNG-Bild), den eingegebenen Namen, den Zeitstempel der Unterzeichnung, die IP-Adresse, die User-Agent-Zeichenfolge des Browsers sowie die Einwilligungsbestätigung. Diese werden von der Cloud Function in das Firestore-Dokument als Teil des manipulationssicheren Signaturdatensatzes geschrieben, anschließend auf Ihr Gerät heruntergeladen und dort lokal als signierter, unveränderlicher Datensatz gespeichert.</li>
     </ul>
@@ -292,7 +298,7 @@
     <ul>
       <li><strong>Auskunft und Datenübertragbarkeit:</strong> Verwenden Sie die Exportfunktionen der App (PDF, CSV, JSON, Beweis-ZIP), um Ihre Daten jederzeit abzurufen.</li>
       <li><strong>Löschung:</strong> Löschen Sie einzelne Nachträge in der App, oder entfernen Sie die App vollständig, um alle lokalen Daten zu löschen.</li>
-      <li><strong>Einschränkung und Berichtigung:</strong> Bearbeiten Sie Entwürfe direkt in der App. Unterzeichnete Nachträge sind absichtlich unveränderlich; erstellen Sie eine Revision oder „Als Entwurf duplizieren", um eine Korrektur auszustellen.</li>
+      <li><strong>Einschränkung und Berichtigung:</strong> Bearbeiten Sie Entwürfe direkt in der App. Unterzeichnete Nachträge sind absichtlich unveränderlich; erstellen Sie eine Revision oder „Als Entwurf duplizieren“, um eine Korrektur auszustellen.</li>
       <li><strong>Fernunterzeichnungsdatensätze:</strong> Kontaktieren Sie uns unter <a href="mailto:forthemcreation@gmail.com">forthemcreation@gmail.com</a>, um die Löschung eines bestimmten verschlüsselten Signaturdokuments vor seinem 7-Tage-Ablauf zu beantragen.</li>
     </ul>
 
