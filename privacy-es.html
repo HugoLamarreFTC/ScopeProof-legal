@@ -81,7 +81,7 @@
       <h1>Política de privacidad de ScopeProof</h1>
     </div>
 
-    <p class="effective-date"><strong>Última actualización:</strong> 27 de abril de 2026</p>
+    <p class="effective-date"><strong>Última actualización:</strong> 7 de junio de 2026</p>
 
     <p class="translation-notice">
       Esta es una traducción de cortesía. En caso de discrepancia, la <a href="index.html">versión en inglés</a> es la legalmente vinculante.
@@ -121,11 +121,39 @@
       otro fin.
     </p>
 
-    <h2>3. Sin seguimiento ni analíticas</h2>
+    <h2>3. Analíticas de uso e informes de fallos</h2>
     <p>
-      ScopeProof no utiliza herramientas de analítica, SDK de seguimiento, frameworks publicitarios ni recopiladores
-      de datos de comportamiento. No recopilamos estadísticas de uso, identificadores de dispositivo con fines de
-      seguimiento ni datos de comportamiento.
+      Para entender cómo se utiliza ScopeProof y para detectar y corregir errores, la App utiliza dos servicios de
+      Google Firebase: <strong>Firebase Analytics</strong> (analíticas de uso anónimas de las funciones) y
+      <strong>Firebase Crashlytics</strong> (diagnóstico de fallos y errores).
+    </p>
+    <p>
+      <strong>Tu consentimiento controla esto.</strong> En la UE, el EEE, el Reino Unido y Suiza, las analíticas de
+      uso y los informes de fallos están <strong>desactivados por defecto</strong> y solo se activan si das tu
+      consentimiento en el primer aviso. En el resto de lugares están activados por defecto. En todas las regiones
+      puedes activarlos o desactivarlos en cualquier momento en
+      <strong>Ajustes &rsaquo; Datos y privacidad &rsaquo; «Compartir datos de uso y fallos».</strong>
+      No se recopila nada mientras este ajuste está desactivado.
+    </p>
+    <p>
+      <strong>Qué se recopila (solo cuando está activado):</strong>
+    </p>
+    <ul>
+      <li>Eventos de uso anónimos &mdash; por ejemplo, qué funciones y pantallas usas y cuándo &mdash; sin ningún dato comercial asociado.</li>
+      <li>Diagnóstico de fallos y errores &mdash; trazas de pila, además del modelo de tu dispositivo, la versión del sistema operativo y la versión de la app en el momento de un problema.</li>
+      <li>Datos básicos de rendimiento y diagnóstico sobre el funcionamiento de la App.</li>
+      <li>Un <strong>identificador generado aleatoriamente</strong>, creado en tu dispositivo y almacenado localmente, asociado a estos eventos e informes de fallos para agruparlos por sesión anónima. Es un UUID aleatorio &mdash; no tu nombre, correo, ID de Apple, número de teléfono ni identificador publicitario &mdash; y se elimina cuando desinstalas la App.</li>
+    </ul>
+    <p>
+      <strong>Qué no se recopila nunca:</strong> tus órdenes de cambio, ítems, totales, datos de contacto del cliente,
+      fotos, firmas, coordenadas GPS, información de la empresa ni ningún otro dato comercial. Las analíticas y los
+      informes de fallos contienen únicamente datos de interacción con la app y de diagnóstico técnico.
+    </p>
+    <p>
+      <strong>Sin publicidad ni seguimiento entre apps.</strong> ScopeProof no utiliza frameworks publicitarios, no
+      accede al identificador de publicidad de tu dispositivo (IDFA) y no te rastrea a través de otras apps o sitios
+      web. Estos datos los trata Google como parte de Firebase; consulta las
+      <a href="https://firebase.google.com/support/privacy">prácticas de privacidad de Firebase de Google</a>.
     </p>
 
     <h2>4. Firma remota (función Pro, opcional)</h2>
@@ -222,12 +250,14 @@
 
     <h2>10. Compartición de datos y subprocesadores</h2>
     <p>
-      ScopeProof no vende, comparte ni transmite tus datos a terceros con fines publicitarios o de analítica.
-      Los datos solo salen de tu dispositivo cuando realizas una acción explícita:
+      ScopeProof no vende ni alquila tus datos, y nunca los utiliza con fines publicitarios. El único tercero que
+      trata datos en nuestro nombre es <strong>Google Firebase</strong> (Google LLC), nuestro único subprocesador
+      conforme al art.&nbsp;28 del RGPD. Los datos solo salen de tu dispositivo en estos casos:
     </p>
     <ul>
       <li>Cuando exportas o envías archivos (PDF, CSV, QuickBooks, JSON, ZIP de evidencia) por correo, Mensajes, AirDrop u otras apps que elijas.</li>
-      <li>Cuando inicias la firma remota. En ese caso, <strong>Google Firebase</strong> (Google LLC) actúa como nuestro único subprocesador conforme al art.&nbsp;28 del RGPD, prestando los servicios de almacenamiento, entrega de notificaciones push y prevención de abuso descritos en la sección&nbsp;4. Aparte de Firebase, ScopeProof no tiene otros encargados del tratamiento.</li>
+      <li>Cuando las analíticas de uso y los informes de fallos están activados (ver sección&nbsp;3), se envían eventos de uso anónimos y diagnósticos de fallos a <strong>Google Firebase</strong>. Esto nunca incluye tus órdenes de cambio, datos del cliente, fotos ni firmas.</li>
+      <li>Cuando inicias la firma remota, <strong>Google Firebase</strong> presta los servicios de almacenamiento, entrega de notificaciones push y prevención de abuso descritos en la sección&nbsp;4.</li>
     </ul>
 
     <h2>11. Eliminación de datos</h2>
@@ -236,7 +266,7 @@
     </p>
     <ul>
       <li>Borrando órdenes de cambio o proyectos individuales dentro de la App</li>
-      <li>Eliminando la App de tu dispositivo (esto borra todos los datos almacenados localmente, incluidas las claves criptográficas del llavero)</li>
+      <li>Eliminando la App de tu dispositivo (esto borra todos los datos almacenados localmente, incluidas las claves criptográficas del llavero y el identificador de analítica local)</li>
       <li>Dejando que las solicitudes de firma remota expiren tras 7 días, o contactándonos para solicitar la eliminación anticipada de un documento de firma específico</li>
     </ul>
 
@@ -245,8 +275,8 @@
       En la medida en que se realice algún tratamiento de datos, nuestras bases legales son:
     </p>
     <ul>
-      <li><strong>Consentimiento:</strong> concedes voluntariamente los permisos del dispositivo (cámara, ubicación, fototeca, notificaciones push) y puedes revocarlos en cualquier momento desde los ajustes de tu dispositivo. La firma remota se activa solo por tu acción explícita.</li>
-      <li><strong>Interés legítimo:</strong> proporcionar la funcionalidad principal de la App, como almacenamiento local de datos, verificación criptográfica, generación de PDF y entrega de los documentos de firma remota que decidas enviar.</li>
+      <li><strong>Consentimiento:</strong> cuando es necesario (la UE/EEE, el Reino Unido y Suiza), las analíticas de uso y los informes de fallos solo se tratan después de que des tu consentimiento, que puedes retirar en cualquier momento en los Ajustes. También concedes voluntariamente los permisos del dispositivo (cámara, ubicación, fototeca, notificaciones push) y puedes revocarlos en cualquier momento desde los ajustes de tu dispositivo. La firma remota se activa solo por tu acción explícita.</li>
+      <li><strong>Interés legítimo:</strong> proporcionar la funcionalidad principal de la App, como almacenamiento local de datos, verificación criptográfica, generación de PDF, entrega de los documentos de firma remota que decidas enviar y &mdash; fuera de las regiones que requieren consentimiento mencionadas arriba &mdash; mejorar la App mediante analíticas anónimas y diagnósticos de fallos que puedes desactivar en cualquier momento.</li>
       <li><strong>Contrato:</strong> tramitación de la compra única Pro a través de la App Store de Apple.</li>
     </ul>
 

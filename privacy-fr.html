@@ -81,7 +81,7 @@
       <h1>Politique de confidentialité de ScopeProof</h1>
     </div>
 
-    <p class="effective-date"><strong>Dernière mise à jour :</strong> 27 avril 2026</p>
+    <p class="effective-date"><strong>Dernière mise à jour :</strong> 7 juin 2026</p>
 
     <p class="translation-notice">
       Ceci est une traduction de courtoisie. En cas de divergence d'interprétation, la <a href="index.html">version anglaise</a> fait juridiquement foi.
@@ -121,11 +121,40 @@
       utilisé à aucune autre fin.
     </p>
 
-    <h2>3. Aucun suivi ni analyse</h2>
+    <h2>3. Statistiques d'utilisation et rapports de plantage</h2>
     <p>
-      ScopeProof n'utilise aucun outil d'analyse, kit de suivi (SDK), cadre publicitaire ni collecteur de données
-      comportementales. Nous ne collectons pas de statistiques d'utilisation, d'identifiants d'appareil à des fins de
-      suivi, ni de données comportementales.
+      Pour comprendre comment ScopeProof est utilisée et pour détecter et corriger les bugs, l'Application utilise
+      deux services Google Firebase : <strong>Firebase Analytics</strong> (statistiques d'utilisation anonymes des
+      fonctionnalités) et <strong>Firebase Crashlytics</strong> (diagnostics de plantage et d'erreur).
+    </p>
+    <p>
+      <strong>Votre consentement contrôle cela.</strong> Dans l'UE, l'EEE, le Royaume-Uni et la Suisse, les
+      statistiques d'utilisation et les rapports de plantage sont <strong>désactivés par défaut</strong> et ne sont
+      activés que si vous y consentez lors de la première invite. Partout ailleurs, ils sont activés par défaut. Dans
+      toutes les régions, vous pouvez les activer ou les désactiver à tout moment dans
+      <strong>Réglages &rsaquo; Données et confidentialité &rsaquo; «&nbsp;Partager les données d'utilisation et de plantage&nbsp;».</strong>
+      Rien n'est collecté tant que ce réglage est désactivé.
+    </p>
+    <p>
+      <strong>Ce qui est collecté (uniquement lorsque c'est activé) :</strong>
+    </p>
+    <ul>
+      <li>Des événements d'utilisation anonymes &mdash; par exemple, quelles fonctionnalités et quels écrans vous utilisez et quand &mdash; sans aucune donnée professionnelle associée.</li>
+      <li>Des diagnostics de plantage et d'erreur &mdash; traces de pile, ainsi que le modèle de votre appareil, la version du système d'exploitation et la version de l'application au moment d'un problème.</li>
+      <li>Des données de base sur les performances et le diagnostic du fonctionnement de l'Application.</li>
+      <li>Un <strong>identifiant généré aléatoirement</strong>, créé sur votre appareil et stocké localement, associé à ces événements et rapports de plantage afin de les regrouper par session anonyme. Il s'agit d'un UUID aléatoire &mdash; ni votre nom, ni votre e-mail, ni votre identifiant Apple, ni votre numéro de téléphone, ni un identifiant publicitaire &mdash; et il est supprimé lorsque vous désinstallez l'Application.</li>
+    </ul>
+    <p>
+      <strong>Ce qui n'est jamais collecté :</strong> vos ordres de modification, articles, totaux, coordonnées
+      du client, photos, signatures, coordonnées GPS, informations de l'entreprise ou toute autre donnée
+      professionnelle. Les statistiques et les rapports de plantage ne contiennent que des données d'interaction
+      avec l'application et de diagnostic technique.
+    </p>
+    <p>
+      <strong>Aucune publicité ni suivi inter-applications.</strong> ScopeProof n'utilise aucun cadre publicitaire,
+      n'accède pas à l'identifiant publicitaire de votre appareil (IDFA) et ne vous suit pas à travers d'autres
+      applications ou sites web. Ces données sont traitées par Google dans le cadre de Firebase ; voir les
+      <a href="https://firebase.google.com/support/privacy">pratiques de confidentialité Firebase de Google</a>.
     </p>
 
     <h2>4. Signature à distance (fonction Pro, optionnelle)</h2>
@@ -224,12 +253,14 @@
 
     <h2>10. Partage de données et sous-traitants</h2>
     <p>
-      ScopeProof ne vend, ne partage et ne transmet vos données à aucun tiers à des fins publicitaires ou d'analyse.
-      Les données ne quittent votre appareil que lorsque vous prenez une action explicite :
+      ScopeProof ne vend ni ne loue vos données, et ne les utilise jamais à des fins publicitaires. Le seul tiers
+      qui traite des données pour notre compte est <strong>Google Firebase</strong> (Google LLC), notre unique
+      sous-traitant au sens de l'art.&nbsp;28 du RGPD. Les données ne quittent votre appareil que dans les cas suivants :
     </p>
     <ul>
       <li>Lorsque vous exportez ou envoyez des fichiers (PDF, CSV, QuickBooks, JSON, ZIP de preuves) via e-mail, Messages, AirDrop ou d'autres applications de votre choix.</li>
-      <li>Lorsque vous lancez la signature à distance. Dans ce cas, <strong>Google Firebase</strong> (Google LLC) agit comme notre unique sous-traitant au sens de l'art.&nbsp;28 du RGPD, fournissant les services de stockage, de diffusion de notifications push et de prévention des abus décrits à la section&nbsp;4. En dehors de Firebase, ScopeProof n'a aucun autre sous-traitant.</li>
+      <li>Lorsque les statistiques d'utilisation et les rapports de plantage sont activés (voir la section&nbsp;3), des événements d'utilisation anonymes et des diagnostics de plantage sont envoyés à <strong>Google Firebase</strong>. Cela n'inclut jamais vos ordres de modification, les coordonnées du client, les photos ni les signatures.</li>
+      <li>Lorsque vous lancez la signature à distance, <strong>Google Firebase</strong> fournit les services de stockage, de diffusion de notifications push et de prévention des abus décrits à la section&nbsp;4.</li>
     </ul>
 
     <h2>11. Suppression des données</h2>
@@ -238,7 +269,7 @@
     </p>
     <ul>
       <li>En supprimant des ordres de modification ou des projets individuels dans l'Application</li>
-      <li>En désinstallant l'Application de votre appareil (cela efface toutes les données locales, y compris les clés cryptographiques du trousseau)</li>
+      <li>En désinstallant l'Application de votre appareil (cela efface toutes les données locales, y compris les clés cryptographiques du trousseau et l'identifiant d'analyse local)</li>
       <li>En laissant les demandes de signature à distance expirer après 7 jours, ou en nous contactant pour demander la suppression anticipée d'un document de signature spécifique</li>
     </ul>
 
@@ -247,8 +278,8 @@
       Dans la mesure où un traitement de données a lieu, nos bases légales sont :
     </p>
     <ul>
-      <li><strong>Consentement :</strong> vous accordez volontairement les autorisations de l'appareil (caméra, localisation, photothèque, notifications push) et pouvez les révoquer à tout moment dans les réglages de votre appareil. La signature à distance n'est déclenchée que par votre action explicite.</li>
-      <li><strong>Intérêt légitime :</strong> fournir les fonctionnalités essentielles de l'Application telles que le stockage local des données, la vérification cryptographique, la génération de PDF et la transmission des documents de signature à distance que vous choisissez d'envoyer.</li>
+      <li><strong>Consentement :</strong> lorsque cela est requis (l'UE/EEE, le Royaume-Uni et la Suisse), les statistiques d'utilisation et les rapports de plantage ne sont traités qu'après votre consentement, que vous pouvez retirer à tout moment dans les Réglages. Vous accordez également volontairement les autorisations de l'appareil (caméra, localisation, photothèque, notifications push) et pouvez les révoquer à tout moment dans les réglages de votre appareil. La signature à distance n'est déclenchée que par votre action explicite.</li>
+      <li><strong>Intérêt légitime :</strong> fournir les fonctionnalités essentielles de l'Application telles que le stockage local des données, la vérification cryptographique, la génération de PDF, la transmission des documents de signature à distance que vous choisissez d'envoyer et &mdash; en dehors des régions nécessitant un consentement mentionnées ci-dessus &mdash; améliorer l'Application grâce à des statistiques anonymes et des diagnostics de plantage que vous pouvez désactiver à tout moment.</li>
       <li><strong>Contrat :</strong> traitement de l'achat unique Pro via l'App Store d'Apple.</li>
     </ul>
 

@@ -81,7 +81,7 @@
       <h1>Datenschutzerklärung für ScopeProof</h1>
     </div>
 
-    <p class="effective-date"><strong>Zuletzt aktualisiert:</strong> 27. April 2026</p>
+    <p class="effective-date"><strong>Zuletzt aktualisiert:</strong> 7. Juni 2026</p>
 
     <p class="translation-notice">
       Dies ist eine Übersetzung zu Informationszwecken. Im Falle von Abweichungen ist die <a href="index.html">englische Fassung</a> rechtlich maßgeblich.
@@ -122,10 +122,39 @@
       anderen Zweck verwendet.
     </p>
 
-    <h2>3. Kein Tracking und keine Analytics</h2>
+    <h2>3. Nutzungsanalysen und Absturzberichte</h2>
     <p>
-      ScopeProof verwendet keine Analyse-Tools, Tracking-SDKs, Werbe-Frameworks oder Sammler verhaltensbezogener Daten.
-      Wir erheben keine Nutzungsstatistiken, Geräte-Identifier zu Tracking-Zwecken und keine Verhaltensdaten.
+      Um zu verstehen, wie ScopeProof genutzt wird, und um Fehler zu finden und zu beheben, verwendet die App zwei
+      Google-Firebase-Dienste: <strong>Firebase Analytics</strong> (anonyme Nutzungsanalysen der Funktionen) und
+      <strong>Firebase Crashlytics</strong> (Absturz- und Fehlerdiagnose).
+    </p>
+    <p>
+      <strong>Ihre Einwilligung steuert dies.</strong> In der EU, dem EWR, dem Vereinigten Königreich und der Schweiz
+      sind Nutzungsanalysen und Absturzberichte <strong>standardmäßig deaktiviert</strong> und werden nur aktiviert,
+      wenn Sie bei der ersten Aufforderung zustimmen. Überall sonst sind sie standardmäßig aktiviert. In allen Regionen
+      können Sie sie jederzeit unter
+      <strong>Einstellungen &rsaquo; Daten &amp; Datenschutz &rsaquo; „Nutzungs- und Absturzdaten teilen"</strong> ein- oder ausschalten.
+      Solange diese Einstellung deaktiviert ist, wird nichts erfasst.
+    </p>
+    <p>
+      <strong>Was erfasst wird (nur wenn aktiviert):</strong>
+    </p>
+    <ul>
+      <li>Anonyme Nutzungsereignisse &mdash; zum Beispiel, welche Funktionen und Bildschirme Sie wann verwenden &mdash; ohne dass geschäftliche Daten angehängt werden.</li>
+      <li>Absturz- und Fehlerdiagnosen &mdash; Stack-Traces sowie Ihr Gerätemodell, die Betriebssystemversion und die App-Version zum Zeitpunkt eines Problems.</li>
+      <li>Grundlegende Leistungs- und Diagnosedaten über den Betrieb der App.</li>
+      <li>Eine <strong>zufällig generierte Kennung</strong>, die auf Ihrem Gerät erstellt und lokal gespeichert wird und diesen Ereignissen und Absturzberichten zugeordnet wird, um sie nach anonymer Sitzung zu gruppieren. Es handelt sich um eine zufällige UUID &mdash; nicht Ihr Name, Ihre E-Mail-Adresse, Ihre Apple-ID, Ihre Telefonnummer oder eine Werbekennung &mdash; und sie wird gelöscht, wenn Sie die App deinstallieren.</li>
+    </ul>
+    <p>
+      <strong>Was niemals erfasst wird:</strong> Ihre Nachträge, Posten, Summen, Kundenkontaktdaten, Fotos,
+      Unterschriften, GPS-Koordinaten, Firmeninformationen oder sonstige geschäftliche Daten. Analysen und
+      Absturzberichte enthalten ausschließlich App-Interaktions- und technische Diagnosedaten.
+    </p>
+    <p>
+      <strong>Keine Werbung und kein app-übergreifendes Tracking.</strong> ScopeProof verwendet keine Werbe-Frameworks,
+      greift nicht auf die Werbekennung Ihres Geräts (IDFA) zu und verfolgt Sie nicht über andere Apps oder Websites
+      hinweg. Diese Daten werden von Google im Rahmen von Firebase verarbeitet; siehe die
+      <a href="https://firebase.google.com/support/privacy">Firebase-Datenschutzpraktiken von Google</a>.
     </p>
 
     <h2>4. Fernunterzeichnung (Pro-Funktion, optional)</h2>
@@ -222,12 +251,14 @@
 
     <h2>10. Datenweitergabe und Auftragsverarbeiter</h2>
     <p>
-      ScopeProof verkauft, teilt oder überträgt Ihre Daten nicht zu Werbe- oder Analysezwecken an Dritte. Daten verlassen
-      Ihr Gerät nur, wenn Sie eine ausdrückliche Aktion vornehmen:
+      ScopeProof verkauft oder vermietet Ihre Daten nicht und verwendet sie niemals für Werbung. Der einzige Dritte,
+      der jemals Daten in unserem Auftrag verarbeitet, ist <strong>Google Firebase</strong> (Google LLC), unser einziger
+      Auftragsverarbeiter im Sinne von Art.&nbsp;28 DSGVO. Daten verlassen Ihr Gerät nur in den folgenden Fällen:
     </p>
     <ul>
       <li>Wenn Sie Dateien (PDF, CSV, QuickBooks, JSON, Beweis-ZIP) per E-Mail, Nachrichten, AirDrop oder anderen Apps Ihrer Wahl exportieren oder versenden.</li>
-      <li>Wenn Sie die Fernunterzeichnung initiieren. In diesem Fall fungiert <strong>Google Firebase</strong> (Google LLC) als unser einziger Auftragsverarbeiter im Sinne von Art.&nbsp;28 DSGVO und stellt die in Abschnitt&nbsp;4 beschriebenen Speicher-, Push-Zustellungs- und Missbrauchspräventionsdienste bereit. Außer Firebase hat ScopeProof keine weiteren Datenverarbeiter.</li>
+      <li>Wenn Nutzungsanalysen und Absturzberichte aktiviert sind (siehe Abschnitt&nbsp;3), werden anonyme Nutzungsereignisse und Absturzdiagnosen an <strong>Google Firebase</strong> gesendet. Dies umfasst niemals Ihre Nachträge, Kundendaten, Fotos oder Unterschriften.</li>
+      <li>Wenn Sie die Fernunterzeichnung initiieren, stellt <strong>Google Firebase</strong> die in Abschnitt&nbsp;4 beschriebenen Speicher-, Push-Zustellungs- und Missbrauchspräventionsdienste bereit.</li>
     </ul>
 
     <h2>11. Datenlöschung</h2>
@@ -236,7 +267,7 @@
     </p>
     <ul>
       <li>einzelne Nachträge oder Projekte innerhalb der App löschen</li>
-      <li>die App von Ihrem Gerät entfernen (dadurch werden alle lokal gespeicherten Daten einschließlich kryptografischer Schlüssel im Schlüsselbund gelöscht)</li>
+      <li>die App von Ihrem Gerät entfernen (dadurch werden alle lokal gespeicherten Daten einschließlich kryptografischer Schlüssel im Schlüsselbund und der lokalen Analyse-Kennung gelöscht)</li>
       <li>Fernunterzeichnungsanfragen nach 7 Tagen ablaufen lassen oder uns kontaktieren, um die vorzeitige Löschung eines bestimmten Signaturdokuments zu beantragen</li>
     </ul>
 
@@ -245,8 +276,8 @@
       Soweit eine Datenverarbeitung stattfindet, sind unsere Rechtsgrundlagen:
     </p>
     <ul>
-      <li><strong>Einwilligung:</strong> Sie erteilen Geräteberechtigungen (Kamera, Standort, Fotomediathek, Push-Benachrichtigungen) freiwillig und können diese jederzeit in den Geräteeinstellungen widerrufen. Die Fernunterzeichnung wird nur durch Ihre ausdrückliche Aktion ausgelöst.</li>
-      <li><strong>Berechtigtes Interesse:</strong> Bereitstellung der Kernfunktionen der App wie lokale Datenspeicherung, kryptografische Verifikation, PDF-Erstellung und Zustellung von Fernunterzeichnungsdokumenten, die Sie versenden möchten.</li>
+      <li><strong>Einwilligung:</strong> Wo erforderlich (in der EU/im EWR, im Vereinigten Königreich und in der Schweiz) werden Nutzungsanalysen und Absturzberichte nur nach Ihrer Zustimmung verarbeitet, die Sie jederzeit in den Einstellungen widerrufen können. Außerdem erteilen Sie Geräteberechtigungen (Kamera, Standort, Fotomediathek, Push-Benachrichtigungen) freiwillig und können diese jederzeit in den Geräteeinstellungen widerrufen. Die Fernunterzeichnung wird nur durch Ihre ausdrückliche Aktion ausgelöst.</li>
+      <li><strong>Berechtigtes Interesse:</strong> Bereitstellung der Kernfunktionen der App wie lokale Datenspeicherung, kryptografische Verifikation, PDF-Erstellung, Zustellung von Fernunterzeichnungsdokumenten, die Sie versenden möchten, und &mdash; außerhalb der oben genannten einwilligungspflichtigen Regionen &mdash; Verbesserung der App durch anonyme Analysen und Absturzdiagnosen, die Sie jederzeit deaktivieren können.</li>
       <li><strong>Vertrag:</strong> Abwicklung des einmaligen Pro-Kaufs über Apples App Store.</li>
     </ul>
 

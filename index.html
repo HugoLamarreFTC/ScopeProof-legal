@@ -81,7 +81,7 @@
       <h1>Privacy Policy for ScopeProof</h1>
     </div>
 
-    <p class="effective-date"><strong>Last updated:</strong> April 27, 2026</p>
+    <p class="effective-date"><strong>Last updated:</strong> June 7, 2026</p>
 
     <p>
       ScopeProof ("the App") is designed to respect your privacy and operate transparently.
@@ -116,11 +116,38 @@
       request can identify which customer the notification refers to; it is not used for any other purpose.
     </p>
 
-    <h2>3. No Tracking or Analytics</h2>
+    <h2>3. Usage Analytics and Crash Reporting</h2>
     <p>
-      ScopeProof does not use analytics tools, tracking SDKs, advertising frameworks, or
-      behavioral-data collectors. We do not collect usage analytics, device identifiers for tracking,
-      or behavioral data.
+      To understand how ScopeProof is used and to find and fix bugs, the App uses two Google Firebase
+      services: <strong>Firebase Analytics</strong> (anonymous feature-usage analytics) and
+      <strong>Firebase Crashlytics</strong> (crash and error diagnostics).
+    </p>
+    <p>
+      <strong>Your consent controls this.</strong> In the EU, the EEA, the United Kingdom, and Switzerland,
+      analytics and crash reporting are <strong>off by default</strong> and are enabled only if you opt in when
+      first prompted. Everywhere else they are on by default. In all regions you can turn them on or off at any
+      time in <strong>Settings &rsaquo; Data &amp; Privacy &rsaquo; &ldquo;Share Usage &amp; Crash Data.&rdquo;</strong>
+      Nothing is collected while this setting is off.
+    </p>
+    <p>
+      <strong>What is collected (only when enabled):</strong>
+    </p>
+    <ul>
+      <li>Anonymous app-usage events &mdash; for example, which features and screens you use and when &mdash; with no business data attached.</li>
+      <li>Crash and error diagnostics &mdash; stack traces, and your device model, operating-system version, and app version at the time of a problem.</li>
+      <li>Basic performance and diagnostic data about the App's operation.</li>
+      <li>A <strong>randomly generated identifier</strong> created on your device and stored locally, attached to these events and crash reports so they can be grouped by anonymous session. It is a random UUID &mdash; not your name, email, Apple ID, phone number, or advertising identifier &mdash; and it is removed when you delete the App.</li>
+    </ul>
+    <p>
+      <strong>What is never collected:</strong> your change orders, line items, totals, customer contact details,
+      photos, signatures, GPS coordinates, company information, or any other business data. Analytics and crash
+      reports contain only app-interaction and technical diagnostic data.
+    </p>
+    <p>
+      <strong>No advertising and no cross-app tracking.</strong> ScopeProof does not use advertising frameworks,
+      does not access your device's advertising identifier (IDFA), and does not track you across other apps or
+      websites. This data is processed by Google as part of Firebase; see
+      <a href="https://firebase.google.com/support/privacy">Google's Firebase privacy practices</a>.
     </p>
 
     <h2>4. Remote Signing (Pro Feature, Optional)</h2>
@@ -215,12 +242,14 @@
 
     <h2>10. Data Sharing and Sub-Processors</h2>
     <p>
-      ScopeProof does not sell, share, or transmit your data to third parties for advertising or analytics.
-      Data leaves your device only when you take an explicit action:
+      ScopeProof does not sell or rent your data, and never uses it for advertising. The only third party that
+      ever processes data on our behalf is <strong>Google Firebase</strong> (Google LLC), our sole data
+      sub-processor under GDPR Art.&nbsp;28. Data leaves your device only in these cases:
     </p>
     <ul>
       <li>When you export or send files (PDF, CSV, QuickBooks, JSON, evidence ZIP) via email, Messages, AirDrop, or other apps you choose.</li>
-      <li>When you initiate remote signing. In that case <strong>Google Firebase</strong> (Google LLC) acts as our sole data sub-processor under GDPR Art.&nbsp;28, providing the storage, push delivery, and abuse-prevention services described in Section&nbsp;4. Apart from Firebase, ScopeProof has no third-party data processors.</li>
+      <li>When usage analytics and crash reporting are enabled (see Section&nbsp;3), anonymous usage events and crash diagnostics are sent to <strong>Google Firebase</strong>. This never includes your change orders, customer details, photos, or signatures.</li>
+      <li>When you initiate remote signing, <strong>Google Firebase</strong> provides the storage, push delivery, and abuse-prevention services described in Section&nbsp;4.</li>
     </ul>
 
     <h2>11. Data Deletion</h2>
@@ -229,7 +258,7 @@
     </p>
     <ul>
       <li>Deleting individual change orders or projects within the App</li>
-      <li>Removing the App from your device (this clears all locally stored data, including cryptographic keys in the Keychain)</li>
+      <li>Removing the App from your device (this clears all locally stored data, including cryptographic keys in the Keychain and the local analytics identifier)</li>
       <li>Letting remote signing requests expire after 7 days, or contacting us to request earlier deletion of a specific signing document</li>
     </ul>
 
@@ -238,8 +267,8 @@
       To the extent any data processing occurs, our legal bases are:
     </p>
     <ul>
-      <li><strong>Consent:</strong> You grant device permissions (camera, location, photo library, push notifications) voluntarily and can revoke them at any time in your device settings. Remote signing is triggered only by your explicit action.</li>
-      <li><strong>Legitimate interest:</strong> Providing core App functionality such as local data storage, cryptographic verification, PDF generation, and delivering remote-signing documents you choose to send.</li>
+      <li><strong>Consent:</strong> Where required (the EU/EEA, UK, and Switzerland), usage analytics and crash reporting are processed only after you opt in, and you may withdraw consent at any time in Settings. You also grant device permissions (camera, location, photo library, push notifications) voluntarily and can revoke them at any time in your device settings. Remote signing is triggered only by your explicit action.</li>
+      <li><strong>Legitimate interest:</strong> Providing core App functionality such as local data storage, cryptographic verification, PDF generation, delivering remote-signing documents you choose to send, and &mdash; outside the consent-required regions above &mdash; improving the App through anonymous analytics and crash diagnostics that you can disable at any time.</li>
       <li><strong>Contract:</strong> Processing the one-time Pro purchase via Apple's App Store.</li>
     </ul>
 
